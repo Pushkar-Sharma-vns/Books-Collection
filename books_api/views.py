@@ -22,7 +22,6 @@ class BooksCollectionApiView(APIView):
             'title' : request.data.get('title'),
             'author' : request.data.get('author'),
             'publication_year' : request.data.get('publication_year'),
-            'created' : datetime.now()
         }
         serializer = BookCollectionSerializer(data=data)
         if serializer.is_valid():
