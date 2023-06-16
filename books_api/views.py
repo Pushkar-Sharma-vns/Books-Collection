@@ -4,7 +4,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Books
 from .serializers import BookCollectionSerializer
-import datetime
 
 
 class BooksCollectionApiView(APIView):
@@ -29,6 +28,7 @@ class BooksCollectionApiView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     
 class BooksCollectionDetailApiView(APIView):
     def get_book_object(self, book_id):
